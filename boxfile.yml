@@ -1,7 +1,7 @@
 run.config:
   engine: none
   extra_steps:
-    - wget -O shaman https://s3.amazonaws.com/tools.nanopack.io/shaman/linux/amd64/shaman
+    - wget -O shaman https://s3.amazonaws.com/tools.microbox.cloud/shaman/linux/amd64/shaman
     - chmod 755 shaman
 deploy.config:
   # This shouldn't be necessary... Seems like a bug?
@@ -10,7 +10,7 @@ deploy.config:
   transform:
     - 'sed -i "s,@SECRET_TOKEN@,$SECRET_TOKEN," config.json'
 data.unfs1:
-  image: nanobox/unfs
+  image: mubox/unfs
 web.dns:
   network_dirs:
     data.unfs1:
